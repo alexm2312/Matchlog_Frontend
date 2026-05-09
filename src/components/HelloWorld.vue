@@ -9,6 +9,7 @@ defineProps<{
     <h1 class="green">{{ msg }}</h1>
     <h3>
       Union Berlin und Kaiserslautern an die Fussballspitze
+
       Für immer der FCU und FCK
     </h3>
   </div>
