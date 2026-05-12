@@ -6,7 +6,7 @@ import logo from './assets/football_stadium_logo.svg'
 
 <template>
   <header>
-    <img alt="Vue logo" class="logo" src="@/assets/football_stadium_logo.svg" width="250" height="250" />
+    <img alt="Vue logo" class="logo" src="@/assets/logo.svg" width="250" height="250" />
 
     <div class="wrapper">
       <HelloWorld msg="Eiserne Teufel!" />
