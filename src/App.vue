@@ -1,14 +1,22 @@
 <script setup lang="ts">
+import { ref, onMounted } from 'vue'
 import { RouterLink, RouterView } from 'vue-router'
 import HelloWorld from './components/HelloWorld.vue'
-</script>
+import Matchloglist from './components/Matchlist.vue'
 
+const matches = ref([])
+
+onMounted(async () => {
+  const response = await fetch('https://matchlog-backend.onrender.com/api/matches')
+  matches.value = await response.json()
+})
+</script>
 <template>
   <header>
     <img alt="Vue logo" class="logo" src="@/assets/logo.svg" width="125" height="125" />
 
     <div class="wrapper">
-      <HelloWorld msg="Eiserne Teufel!" />
+      <HelloWorld msg="You did it!" />
 
       <nav>
         <RouterLink to="/">Home</RouterLink>
