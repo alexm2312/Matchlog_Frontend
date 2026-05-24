@@ -17,7 +17,7 @@ onMounted(async () => {
 
     <div class="wrapper">
       <HelloWorld msg="You did it!" />
-
+      <Matchloglist :matches="matches" />
       <nav>
         <RouterLink to="/">Home</RouterLink>
         <RouterLink to="/about">About</RouterLink>
