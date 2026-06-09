@@ -25,8 +25,7 @@ onMounted(async () => {
     </div>
   </header>
 
-  <RouterView />
-   <Matchloglist :matches="matches" />
+  <Matchloglist :matches="matches" />
 </template>
 
 <style scoped>
