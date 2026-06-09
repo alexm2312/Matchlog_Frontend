@@ -1,5 +1,8 @@
 <template>
   <div class="about">
+    <p> Die Autoren sind Leandro und Alex </p>
+  </div>
+  <div class="about">
     <h1>This is an about page</h1>
   </div>
 </template>
