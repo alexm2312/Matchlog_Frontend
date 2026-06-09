@@ -9,8 +9,12 @@ defineProps<{
 </script>
 
 <template>
+  <img src="@/assets/meinbild.jpg" alt="Logo">
   <div>
-    <h1>Spiele</h1>
+    <h2>Spiele</h2>
+    <p>Hier findest du eine Liste aller Spiele, die in unserer Datenbank gespeichert sind. Klicke auf ein Spiel, um weitere Details zu erfahren.
+    </p>
+    <br>
 
     <div v-for="match in matches" :key="match.title">
       <h3>{{ match.title }}</h3>
