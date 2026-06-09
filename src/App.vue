@@ -7,7 +7,7 @@ import Matchloglist from './components/Matchlist.vue'
 const matches = ref([])
 
 onMounted(async () => {
-  const response = await fetch('https://matchlog-backend.onrender.com/api/matches')
+  const response = await fetch('https://matchlog-backend-12iq.onrender.com/api/matches')
   matches.value = await response.json()
 })
 </script>
@@ -26,6 +26,7 @@ onMounted(async () => {
   </header>
 
   <RouterView />
+   <Matchloglist :matches="matches" />
 </template>
 
 <style scoped>
