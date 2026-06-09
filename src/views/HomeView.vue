@@ -1,9 +1,5 @@
-<script setup lang="ts">
-import MatchList from '../components/MatchList.vue'
-</script>
-
 <template>
   <main>
-    <MatchList />
+    <h1>Home</h1>
   </main>
 </template>
