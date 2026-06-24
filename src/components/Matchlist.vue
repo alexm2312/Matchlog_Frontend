@@ -7,7 +7,8 @@ const matches = ref<{ title: string; location: string; ticketprice: number }[]>(
 const newMatch = ref({
   title: '',
   location: '',
-  ticketprice: 0
+  ticketprice: 0,
+  visibility: 'PUBLIC'
 })
 
 const loadMatches = async () => {
@@ -16,8 +17,9 @@ const loadMatches = async () => {
 }
 
 const addMatch = async () => {
+  // POST Route 
   await axios.post('https://matchlog-backend-12iq.onrender.com/api/matches', newMatch.value)
-  newMatch.value = { title: '', location: '', ticketprice: 0 }
+  newMatch.value = { title: '', location: '', ticketprice: 0, visibility: 'PUBLIC' }
   await loadMatches()
 }
 
@@ -42,6 +44,13 @@ onMounted(loadMatches)
     <input v-model="newMatch.title" placeholder="Spielname" /><br>
     <input v-model="newMatch.location" placeholder="Stadion" /><br>
     <input v-model="newMatch.ticketprice" type="number" placeholder="Preis" /><br>
+
+    <select v-model="newMatch.visibility">
+      <option value="PUBLIC">Public</option>
+      <option value="PRIVATE">Private</option>
+    </select>
+    <br>
+
     <button @click="addMatch">Hinzufügen</button>
   </div>
 </template>
