@@ -1,86 +1,93 @@
-/* color palette from <https://github.com/vuejs/theme> */
+/* Matchlog – Design Tokens
+   Leitidee: Eintrittsticket / Stadionbesuch, nicht "Dark Mode SaaS" */
+
 :root {
-  --vt-c-white: #ffffff;
-  --vt-c-white-soft: #f8f8f8;
-  --vt-c-white-mute: #f2f2f2;
+  /* Farben */
+  --c-night: #14171c; /* Bühne / Seitenhintergrund */
+  --c-panel: #1b1f26; /* Navbar, erhöhte Flächen */
+  --c-panel-soft: #21262e;
+  --c-paper: #f3eee3; /* Ticket-Papier */
+  --c-paper-soft: #e8e1d2;
+  --c-ink: #1e2118; /* Text auf Papier */
+  --c-pitch: #4f7a5c; /* Rasengrün, sparsam */
+  --c-pitch-bright: #6fae81;
+  --c-floodlight: #e2a33d; /* Flutlicht-Gold, Hauptakzent */
+  --c-floodlight-soft: #f0c374;
+  --c-chalk: #c9d2d6; /* Sekundärtext auf dunkel */
+  --c-chalk-dim: #8a9499;
+  --c-stub-line: rgba(243, 238, 227, 0.28);
+  --c-danger: #c1543c;
 
-  --vt-c-black: #181818;
-  --vt-c-black-soft: #222222;
-  --vt-c-black-mute: #282828;
+  /* Typografie */
+  --f-display: 'Oswald', 'Arial Narrow', sans-serif;
+  --f-body: 'Source Serif 4', Georgia, serif;
+  --f-mono: 'IBM Plex Mono', 'Courier New', monospace;
 
-  --vt-c-indigo: #2c3e50;
-
-  --vt-c-divider-light-1: rgba(60, 60, 60, 0.29);
-  --vt-c-divider-light-2: rgba(60, 60, 60, 0.12);
-  --vt-c-divider-dark-1: rgba(84, 84, 84, 0.65);
-  --vt-c-divider-dark-2: rgba(84, 84, 84, 0.48);
-
-  --vt-c-text-light-1: var(--vt-c-indigo);
-  --vt-c-text-light-2: rgba(60, 60, 60, 0.66);
-  --vt-c-text-dark-1: var(--vt-c-white);
-  --vt-c-text-dark-2: rgba(235, 235, 235, 0.64);
+  /* Layout */
+  --max-width: 1180px;
+  --radius-card: 4px;
+  --nav-height: 72px;
 }
 
-/* semantic color variables for this project */
-:root {
-  --color-background: var(--vt-c-white);
-  --color-background-soft: var(--vt-c-white-soft);
-  --color-background-mute: var(--vt-c-white-mute);
-
-  --color-border: var(--vt-c-divider-light-2);
-  --color-border-hover: var(--vt-c-divider-light-1);
-
-  --color-heading: var(--vt-c-text-light-1);
-  --color-text: var(--vt-c-text-light-1);
-
-  --section-gap: 160px;
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --color-background: var(--vt-c-black);
-    --color-background-soft: var(--vt-c-black-soft);
-    --color-background-mute: var(--vt-c-black-mute);
-
-    --color-border: var(--vt-c-divider-dark-2);
-    --color-border-hover: var(--vt-c-divider-dark-1);
-
-    --color-heading: var(--vt-c-text-dark-1);
-    --color-text: var(--vt-c-text-dark-2);
-  }
-}
-
-*,
-*::before,
-*::after {
+* {
   box-sizing: border-box;
   margin: 0;
-  font-weight: normal;
+  padding: 0;
+}
+
+html {
+  scroll-behavior: smooth;
 }
 
 body {
   min-height: 100vh;
-  color: var(--color-text);
-  background: var(--color-background);
-  transition:
-    color 0.5s,
-    background-color 0.5s;
+  background: var(--c-night);
+  color: var(--c-chalk);
+  font-family: var(--f-body);
+  font-size: 16px;
   line-height: 1.6;
-  font-family:
-    Inter,
-    -apple-system,
-    BlinkMacSystemFont,
-    'Segoe UI',
-    Roboto,
-    Oxygen,
-    Ubuntu,
-    Cantarell,
-    'Fira Sans',
-    'Droid Sans',
-    'Helvetica Neue',
-    sans-serif;
-  font-size: 15px;
-  text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+}
+
+h1,
+h2,
+h3,
+h4 {
+  font-family: var(--f-display);
+  text-transform: uppercase;
+  letter-spacing: 0.02em;
+  color: var(--c-paper);
+  font-weight: 600;
+  line-height: 1.15;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+button {
+  font-family: var(--f-display);
+  cursor: pointer;
+  border: none;
+}
+
+img {
+  display: block;
+  max-width: 100%;
+}
+
+:focus-visible {
+  outline: 2px solid var(--c-floodlight);
+  outline-offset: 2px;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    transition-duration: 0.01ms !important;
+  }
 }
