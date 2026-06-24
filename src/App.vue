@@ -1,5 +1,6 @@
 <script setup lang="ts">
 import { RouterLink, RouterView } from 'vue-router'
+import AuthButtons from './components/AuthButtons.vue'
 </script>
 
 <template>
@@ -12,6 +13,8 @@ import { RouterLink, RouterView } from 'vue-router'
         <RouterLink to="/about">About</RouterLink>
         <RouterLink to="/drachenlord">Drachenlord</RouterLink>
       </nav>
+      
+      <AuthButtons />
     </div>
   </header>
 
