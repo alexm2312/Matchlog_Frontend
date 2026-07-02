@@ -1,35 +1,58 @@
 @import './base.css';
 
 #app {
-  max-width: 1280px;
+  min-height: 100vh;
+}
+
+.container {
+  max-width: var(--max-width);
   margin: 0 auto;
-  padding: 2rem;
-  font-weight: normal;
+  padding: 0 24px;
 }
 
-a,
-.green {
-  text-decoration: none;
-  color: hsla(160, 100%, 37%, 1);
-  transition: 0.4s;
-  padding: 3px;
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  padding: 12px 26px;
+  border-radius: 999px;
+  font-size: 0.85rem;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  transition: transform 0.15s ease, background-color 0.15s ease, color 0.15s ease;
+  white-space: nowrap;
 }
 
-@media (hover: hover) {
-  a:hover {
-    background-color: hsla(160, 100%, 37%, 0.2);
-  }
+.btn:active {
+  transform: scale(0.97);
 }
 
-@media (min-width: 1024px) {
-  body {
-    display: flex;
-    place-items: center;
-  }
+.btn-primary {
+  background: var(--c-floodlight);
+  color: var(--c-ink);
+}
 
-  #app {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    padding: 0 2rem;
-  }
+.btn-primary:hover {
+  background: var(--c-floodlight-soft);
+}
+
+.btn-ghost {
+  background: transparent;
+  color: var(--c-paper);
+  padding: 12px 18px;
+  border: 1px solid var(--c-stub-line);
+}
+
+.btn-ghost:hover {
+  border-color: var(--c-floodlight);
+  color: var(--c-floodlight-soft);
+}
+
+.eyebrow {
+  font-family: var(--f-mono);
+  font-size: 0.75rem;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--c-floodlight-soft);
 }

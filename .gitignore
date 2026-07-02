@@ -1,2 +1,6 @@
 node_modules
 dist
+
+# lokale Overrides, nie committen
+.env.local
+.env.*.local
