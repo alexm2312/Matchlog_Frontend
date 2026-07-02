@@ -2,7 +2,7 @@ import { describe, it, expect, vi, beforeEach } from 'vitest'
 import { mount, flushPromises } from '@vue/test-utils'
 import { ref, nextTick } from 'vue'
 
-// --- Globale Mocks (Vitest hoistet vi.mock() automatisch vor alle Imports) ----
+// --- Globale Mocks (Vitest hoistet vi.mock() automatisch vor alle Imports) ---
 
 vi.mock('@auth0/auth0-vue', () => ({
   useAuth0: vi.fn(),
