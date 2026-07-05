@@ -8,7 +8,7 @@ defineProps<{
   <div class="greetings">
     <h1 class="green">{{ msg }}</h1>
     <h3>
-      Union Berlin und Kaiserslautern an die Fussballspitze
+      Union Berlin und Kaiserslautern an die Fussball
 
       Für immer der FCU und FCK
     </h3>
